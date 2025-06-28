@@ -6,7 +6,11 @@
     "start": "node server.js",
     "dev": "chcp 65001 >nul && nodemon server.js | npx pino-pretty",
     "sync:schema": "chcp 65001 >nul && node scripts/syncSchema.js | npx pino-pretty",
-    "test:register": "chcp 65001 >nul && node scripts/testRegister.js | npx pino-pretty"
+    "test:register": "chcp 65001 >nul && node scripts/testRegister.js | npx pino-pretty",
+    "release": "standard-version",
+  "release:minor": "standard-version --release-as minor",
+  "release:patch": "standard-version --release-as patch",
+  "import:price": "node scripts/importPriceItems.js"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +31,7 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
-    "pino-pretty": "^13.0.0"
+    "pino-pretty": "^13.0.0",
+    "standard-version": "^9.5.0"
   }
 }
